@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet The Team | Byte Studio</title>
+    
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR & NOISE -->
+    <div class="custom-cursor" id="cursor"><span class="cursor-text">OPEN</span></div>
+    <div class="noise-wrapper"><div class="noise"></div></div>
+
+    <!-- NAVIGATION OVERLAY -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-top">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">WE ARE BYTE STUDIO * MOVEMENT OF YOUNG MINDS * WE ARE BYTE STUDIO *</div>
+            </div>
+            <button class="close-btn hover-target" onclick="toggleNav()">CLOSE</button>
+        </div>
+        <div class="nav-links-list">
+            <div class="nav-item hover-target" onclick="location.href='index.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">HOME</span><span class="nav-num">/01</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='about.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">ABOUT</span><span class="nav-num">/02</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='works.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">WORKS</span><span class="nav-num">/03</span>
+            </div>
+            <div class="nav-item hover-target active" onclick="location.href='meet-the-team.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">MEET THE TEAM</span><span class="nav-num">/04</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='contact.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">CONTACT</span><span class="nav-num">/05</span>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <a href="#" class="hover-target">FACEBOOK ↗</a>
+            <a href="#" class="hover-target">INSTAGRAM ↗</a>
+            <a href="#" class="hover-target">TWITTER ↗</a>
+            <a href="#" class="admin-login-btn hover-target" onclick="toggleAdmin()">ADMIN LOGIN 🔒</a>
+        </div>
+    </div>
+    
+    <!-- ADMIN LOGIN MODAL -->
+    <div class="admin-overlay" id="adminOverlay">
+        <div class="login-box">
+            <button class="close-modal hover-target" onclick="toggleAdmin()">×</button>
+            <h2 class="login-title">Admin Access</h2>
+            <form>
+                <div class="input-group">
+                    <label class="input-label">Username</label>
+                    <input type="text" class="brutalist-input hover-target">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Password</label>
+                    <input type="password" class="brutalist-input hover-target">
+                </div>
+                <button type="submit" class="submit-btn hover-target">Login System</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MEMBER DETAILS POPUP (Hidden by default, triggered by JS) -->
+    <div class="member-overlay" id="memberOverlay">
+        <div class="member-box">
+            <button class="close-modal hover-target" onclick="closeMember()">×</button>
+            
+            <!-- Left Side: Image -->
+            <div class="member-img-container">
+                <img id="modalImg" src="" alt="Team Member">
+            </div>
+            
+            <!-- Right Side: Text Info -->
+            <div class="member-details-container">
+                <div class="member-role" id="modalRole">Role Placeholder</div>
+                <div class="member-name-large" id="modalName">Name Placeholder</div>
+                <div class="member-bio" id="modalBio">Bio description placeholder.</div>
+                
+                <button class="btn-angled hover-target">View Personal Projects</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div class="logo-top-left">BYTE STUDIO</div>
+    <button class="menu-trigger hover-target" onclick="toggleNav()">MENU</button>
+
+    <div class="section" style="padding-top: 10rem;">
+        <div class="section-header-row">
+            <div>
+                <h2 class="section-title reveal-text">The</h2>
+                <h2 class="section-title reveal-text" style="color: var(--accent-pink);">Minds</h2>
+            </div>
+            <div class="section-desc reveal-text">
+                <span>The architects of the digital realm. A movement of young minds driven by art.</span>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            
+            <!-- Member 1: Alex -->
+            <div class="scroll-trigger hover-target" 
+                 onclick="openMember(this)" 
+                 data-name="Alex" 
+                 data-role="Creative Director" 
+                 data-bio="Alex leads the vision with over 10 years of experience in digital art, merging classical aesthetics with cyberpunk brutality to create unique visual languages."
+                 data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Member">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Alex</div>
+                    <div class="team-role">Creative Director</div>
+                </div>
+            </div>
+
+            <!-- Member 2: Sarah -->
+             <div class="scroll-trigger hover-target" 
+                  onclick="openMember(this)"
+                  data-name="Sarah" 
+                  data-role="Lead Designer" 
+                  data-bio="Sarah is a master of visual hierarchy, ensuring every pixel serves a purpose in the greater narrative. Her background in print design informs her digital work."
+                  data-img="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Member">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Sarah</div>
+                    <div class="team-role">Lead Designer</div>
+                </div>
+            </div>
+
+            <!-- Member 3: David -->
+             <div class="scroll-trigger hover-target"
+                  onclick="openMember(this)"
+                  data-name="David" 
+                  data-role="3D Artist" 
+                  data-bio="David constructs the impossible, building immersive 3D environments that defy physics and logic using Blender and Cinema 4D."
+                  data-img="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop" alt="Member">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">David</div>
+                    <div class="team-role">3D Artist</div>
+                </div>
+            </div>
+
+            <!-- Member 4: Maya -->
+             <div class="scroll-trigger hover-target"
+                  onclick="openMember(this)"
+                  data-name="Maya" 
+                  data-role="Motion Graphics" 
+                  data-bio="Maya breathes life into static imagery, creating fluid motion that captivates and engages the audience. Specializes in kinetic typography."
+                  data-img="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop" alt="Member">
+                </div>
+                <div class="team-info">
+                    <div class="team-name">Maya</div>
+                    <div class="team-role">Motion Graphic</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="giant-footer-text">BYTE STUDIO</div>
+        <div style="display:flex; justify-content:space-between; padding:2rem; font-size:0.8rem; color:#888;">
+            <div>&copy; 2025 Byte Studio</div>
+            <div>Go Back To Top</div>
+        </div>
+    </footer>
+
+    <!-- Link to Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

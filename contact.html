@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Byte Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"><span class="cursor-text">OPEN</span></div>
+    <div class="noise-wrapper"><div class="noise"></div></div>
+
+    <!-- NAV & ADMIN -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-top">
+            <div class="marquee-wrapper"><div class="marquee-content">WE ARE BYTE STUDIO * MOVEMENT OF YOUNG MINDS *</div></div>
+            <button class="close-btn hover-target" onclick="toggleNav()">CLOSE</button>
+        </div>
+        <div class="nav-links-list">
+            <div class="nav-item hover-target" onclick="location.href='index.html'"><span class="nav-symbol">+</span><span class="nav-text">HOME</span><span class="nav-num">/01</span></div>
+            <div class="nav-item hover-target" onclick="location.href='about.html'"><span class="nav-symbol">+</span><span class="nav-text">ABOUT</span><span class="nav-num">/02</span></div>
+            <div class="nav-item hover-target" onclick="location.href='works.html'"><span class="nav-symbol">+</span><span class="nav-text">WORKS</span><span class="nav-num">/03</span></div>
+            <div class="nav-item hover-target" onclick="location.href='meet-the-team.html'"><span class="nav-symbol">+</span><span class="nav-text">MEET THE TEAM</span><span class="nav-num">/04</span></div>
+            <div class="nav-item hover-target active" onclick="location.href='contact.html'"><span class="nav-symbol">+</span><span class="nav-text">CONTACT</span><span class="nav-num">/05</span></div>
+        </div>
+        <div class="nav-bottom">
+            <a href="https://bytestudio.com" class="hover-target">FACEBOOK ↗</a>
+            <a href="https://bytestudio.com" class="hover-target">INSTAGRAM ↗</a>
+            <a href="https://bytestudio.com" class="hover-target">TWITTER ↗</a>
+            <a href="#" class="admin-login-btn hover-target" onclick="toggleAdmin()">ADMIN LOGIN 🔒</a>
+        </div>
+    </div>
+    
+    <div class="admin-overlay" id="adminOverlay">
+        <div class="login-box">
+            <button class="close-modal hover-target" onclick="toggleAdmin()">×</button>
+            <h2 class="login-title">Admin Access</h2>
+            <form>
+                <div class="input-group"><label class="input-label">Username</label><input type="text" class="brutalist-input hover-target"></div>
+                <div class="input-group"><label class="input-label">Password</label><input type="password" class="brutalist-input hover-target"></div>
+                <button type="submit" class="submit-btn hover-target">Login System</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="logo-top-left">BYTE STUDIO</div>
+    <button class="menu-trigger hover-target" onclick="toggleNav()">MENU</button>
+
+    <div class="section contact-section" style="padding-top: 10rem;">
+        <div class="contact-hero reveal-text scroll-trigger">
+            <h2 class="outline-text">Let's Work</h2>
+            <h2>Together</h2>
+        </div>
+
+        <div style="max-width: 600px; margin: 4rem auto; text-align: left;">
+            <form>
+                <div class="input-group">
+                    <label class="input-label">Your Name</label>
+                    <input type="text" class="brutalist-input hover-target" placeholder="Enter name">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Your Email</label>
+                    <input type="email" class="brutalist-input hover-target" placeholder="Enter email">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Message</label>
+                    <textarea class="brutalist-input hover-target" rows="5" placeholder="Tell us about your project"></textarea>
+                </div>
+                <button type="submit" class="submit-btn hover-target">Send Message*</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="giant-footer-text">BYTE STUDIO</div>
+        <div style="display:flex; justify-content:space-between; padding:2rem; font-size:0.8rem; color:#888;">
+            <div>&copy; 2025 Byte Studio</div>
+            <div>Go Back To Top</div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

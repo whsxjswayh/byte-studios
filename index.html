@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Studio | Digital Artifacts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ELEMENTS COMMON TO ALL PAGES -->
+    <div class="custom-cursor" id="cursor"><span class="cursor-text">OPEN</span></div>
+    <div class="noise-wrapper"><div class="noise"></div></div>
+
+    <!-- NAVIGATION OVERLAY -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-top">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">WE ARE BYTE STUDIO * MOVEMENT OF YOUNG MINDS * WE ARE BYTE STUDIO *</div>
+            </div>
+            <button class="close-btn hover-target" onclick="toggleNav()">CLOSE</button>
+        </div>
+        <div class="nav-links-list">
+            <div class="nav-item hover-target active" onclick="location.href='index.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">HOME</span><span class="nav-num">/01</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='about.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">ABOUT</span><span class="nav-num">/02</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='works.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">WORKS</span><span class="nav-num">/03</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='meet-the-team.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">MEET THE TEAM</span><span class="nav-num">/04</span>
+            </div>
+            <div class="nav-item hover-target" onclick="location.href='contact.html'">
+                <span class="nav-symbol">+</span><span class="nav-text">CONTACT</span><span class="nav-num">/05</span>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <a href="https://bytestudio.com" class="hover-target">FACEBOOK ↗</a>
+            <a href="https://bytestudio.com" class="hover-target">INSTAGRAM ↗</a>
+            <a href="https://bytestudio.com" class="hover-target">TWITTER ↗</a>
+            <a href="#" class="admin-login-btn hover-target" onclick="toggleAdmin()">ADMIN LOGIN 🔒</a>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div class="admin-overlay" id="adminOverlay">
+        <div class="login-box">
+            <button class="close-modal hover-target" onclick="toggleAdmin()">×</button>
+            <h2 class="login-title">Admin Access</h2>
+            <form>
+                <div class="input-group">
+                    <label class="input-label">Username</label>
+                    <input type="text" class="brutalist-input hover-target">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">Password</label>
+                    <input type="password" class="brutalist-input hover-target">
+                </div>
+                <button type="submit" class="submit-btn hover-target">Login System</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="logo-top-left">BYTE STUDIO</div>
+    <button class="menu-trigger hover-target" onclick="toggleNav()">MENU</button>
+
+    <header class="hero" id="home">
+        <div class="hero-pre reveal-text"><span>Crafting Vision in Every Piece</span></div>
+        <h1 class="hero-main reveal-text">
+            <span class="delay-1">We Are</span>
+            <span class="accent delay-2">Byte Studio</span>
+        </h1>
+    </header>
+
+    <!-- Partial Works Preview -->
+    <section class="section">
+        <div class="section-header-row">
+            <div>
+                <h2 class="section-title reveal-text scroll-trigger">Featured</h2>
+                <h2 class="section-title reveal-text scroll-trigger" style="color: var(--accent-pink);">Works</h2>
+            </div>
+            <div class="section-desc reveal-text scroll-trigger">
+                <span>Our creative spirit comes alive in the digital realm. Ideas shift, pixels fall into place.</span>
+            </div>
+            <a href="works.html" class="btn-angled hover-target">View Portfolio*</a>
+        </div>
+        <div class="works-grid">
+            <div class="work-card scroll-trigger hover-target" onclick="location.href='works.html'"><img src="https://images.unsplash.com/photo-1635322966219-b75ed3a90533?q=80&w=2000&auto=format&fit=crop" alt="Work"></div>
+            <div class="work-card scroll-trigger hover-target" onclick="location.href='works.html'"><img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2000&auto=format&fit=crop" alt="Work"></div>
+            <div class="work-card scroll-trigger hover-target" onclick="location.href='works.html'"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop" alt="Work"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="giant-footer-text">BYTE STUDIO</div>
+        <div style="display:flex; justify-content:space-between; padding:2rem; font-size:0.8rem; color:#888;">
+            <div>&copy; 2025 Byte Studio</div>
+            <div>Go Back To Top</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
