@@ -3,7 +3,7 @@
     --bg-color: #000000;
     --text-white: #ffffff;
     --text-gray: #888888;
-    --accent-pink: #ff003c; 
+    --accent-pink: #ff6505; 
     --font-head: 'Space Grotesk', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
     --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
@@ -387,4 +387,5 @@ input, textarea { cursor: none; } /* Custom cursor on forms */
     .nav-bottom { grid-template-columns: 1fr; }
     .custom-cursor { display: none; }
     body, a, button, input { cursor: auto; }
+
 }
