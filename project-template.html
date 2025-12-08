@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title | Byte Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PROJECT SPECIFIC STYLES --- */
+        .project-header {
+            padding-top: 12rem;
+            margin-bottom: 6rem;
+        }
+
+        .project-title-large {
+            font-family: var(--font-head);
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            letter-spacing: -2px;
+        }
+
+        /* Introduction Layout */
+        .project-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* 1/3 label, 2/3 content */
+            gap: 4rem;
+            margin-bottom: 8rem;
+            border-top: 1px solid #333;
+            padding-top: 4rem;
+        }
+
+        .intro-label {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent-pink);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .intro-label::before {
+            content: '→'; 
+            font-size: 1.2rem;
+        }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 4rem;
+            max-width: 800px;
+        }
+
+        /* Meta Data Table */
+        .meta-table {
+            width: 100%;
+            border-top: 1px solid #333;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #333;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .meta-key { color: #666; }
+        .meta-value { color: var(--text-white); text-align: right; }
+
+        /* --- IMAGE GRIDS --- */
+        .gallery-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 8rem;
+        }
+
+        .img-box {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* Brutalist Clip */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-smooth);
+            filter: grayscale(20%);
+        }
+        
+        .img-box:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        /* Grid Utilities based on request */
+        .grid-1-full {
+            width: 100%;
+            height: 80vh; /* Big impact image */
+        }
+
+        .grid-2-square {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .grid-2-square .img-box { aspect-ratio: 1/1; }
+
+        .grid-3-wide {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .grid-3-wide .img-box { aspect-ratio: 16/9; }
+
+        .grid-2-wide {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .grid-2-wide .img-box { aspect-ratio: 16/9; }
+
+        .grid-3-square {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .grid-3-square .img-box { aspect-ratio: 1/1; }
+
+        /* Bottom Navigation */
+        .project-footer {
+            text-align: center;
+            padding: 6rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .placeholder-text {
+            font-family: var(--font-mono);
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .project-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .grid-2-square, .grid-3-wide, .grid-2-wide, .grid-3-square {
+                grid-template-columns: 1fr;
+            }
+            .grid-1-full { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- STANDARD SITE ELEMENTS -->
+    <div class="custom-cursor" id="cursor"><span class="cursor-text">VIEW</span></div>
+    <div class="noise-wrapper"><div class="noise"></div></div>
+
+    <!-- NAV OVERLAY (Copy from other pages) -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-top">
+            <div class="marquee-wrapper"><div class="marquee-content">WE ARE BYTE STUDIO * MOVEMENT OF YOUNG MINDS *</div></div>
+            <button class="close-btn hover-target" onclick="toggleNav()">CLOSE</button>
+        </div>
+        <div class="nav-links-list">
+            <div class="nav-item hover-target" onclick="location.href='index.html'"><span class="nav-symbol">+</span><span class="nav-text">HOME</span><span class="nav-num">/01</span></div>
+            <div class="nav-item hover-target" onclick="location.href='about.html'"><span class="nav-symbol">+</span><span class="nav-text">ABOUT</span><span class="nav-num">/02</span></div>
+            <div class="nav-item hover-target active" onclick="location.href='works.html'"><span class="nav-symbol">+</span><span class="nav-text">WORKS</span><span class="nav-num">/03</span></div>
+            <div class="nav-item hover-target" onclick="location.href='meet-the-team.html'"><span class="nav-symbol">+</span><span class="nav-text">TEAM</span><span class="nav-num">/04</span></div>
+            <div class="nav-item hover-target" onclick="location.href='contact.html'"><span class="nav-symbol">+</span><span class="nav-text">CONTACT</span><span class="nav-num">/05</span></div>
+        </div>
+    </div>
+    
+    <div class="logo-top-left">BYTE STUDIO</div>
+    <button class="menu-trigger hover-target" onclick="toggleNav()">MENU</button>
+
+
+    <!-- PROJECT CONTENT START -->
+    <div class="section project-header">
+        
+        <!-- 1. TITLE -->
+        <h1 class="project-title-large reveal-text">
+            <span>Project</span><br>
+            <span style="color: var(--accent-pink);">Title Here</span>
+        </h1>
+
+        <!-- 2. INTRODUCTION & DATA -->
+        <div class="project-intro-grid">
+            <div class="intro-label reveal-text">Introduction</div>
+            
+            <div class="intro-content">
+                <div class="reveal-text">
+                    <p>The Esports Awards is one of the most prestigious annual events in the gaming and esports industry, celebrating excellence across players, teams, organizations, content creators, brands, and innovators shaping the scene. Known for its global reach and high production value.</p>
+                </div>
+
+                <div class="meta-table reveal-text delay-1">
+                    <div class="meta-row">
+                        <span class="meta-key">Year</span>
+                        <span class="meta-value">2025</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-key">Industry</span>
+                        <span class="meta-value">Lorem Ipsum</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-key">Scope of Work</span>
+                        <span class="meta-value">Lorem Ipsum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. IMAGE GALLERY -->
+        <div class="gallery-section">
+            
+            <!-- 1 Whole Image (KV) -->
+            <div class="img-box grid-1-full scroll-trigger hover-target">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop" alt="Key Visual">
+            </div>
+
+            <!-- 2 Images (1:1) -->
+            <div class="grid-2-square">
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Square 1">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1000&auto=format&fit=crop" alt="Square 2">
+                </div>
+            </div>
+
+            <!-- 3 Images (16:9) -->
+            <div class="grid-3-wide">
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Wide 1">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1000&auto=format&fit=crop" alt="Wide 2">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=1000&auto=format&fit=crop" alt="Wide 3">
+                </div>
+            </div>
+
+            <!-- 2 Images (16:9) -->
+            <div class="grid-2-wide">
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1500&auto=format&fit=crop" alt="Wide A">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1500&auto=format&fit=crop" alt="Wide B">
+                </div>
+            </div>
+
+            <!-- 3 Images (1:1) -->
+            <div class="grid-3-square">
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop" alt="Square A">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1000&auto=format&fit=crop" alt="Square B">
+                </div>
+                <div class="img-box scroll-trigger hover-target">
+                    <img src="https://images.unsplash.com/photo-1635322966219-b75ed3a90533?q=80&w=1000&auto=format&fit=crop" alt="Square C">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4. FOOTER / BACK BUTTON -->
+        <div class="project-footer reveal-text">
+            <p class="placeholder-text">
+                Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="works.html" class="btn-angled hover-target">Go Back To Projects</a>
+        </div>
+
+    </div>
+
+    <!-- Same Footer as other pages -->
+    <footer>
+        <div class="giant-footer-text">BYTE STUDIO</div>
+        <div style="display:flex; justify-content:space-between; padding:2rem; font-size:0.8rem; color:#888;">
+            <div>&copy; 2025 Byte Studio</div>
+            <div>Go Back To Top</div>
+        </div>
+    </footer>
+
+    <!-- Link JS -->
+    <script src="script.js"></script>
+</body>
+</html>
