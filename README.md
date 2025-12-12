@@ -1,11 +1,13 @@
 ## 🎨 **Byte Studio** - Art Portfolio Database System
-#### The Byte Studio is a web-based portfolio designed to showcase our creative artworks from students and artists. It features a secured admin panel where the team can manage, upload, and organize the creative artworks/works. And it allows users to view and explore the entire portfolio.
+#### Byte Studio is a web-based portfolio designed to showcase our creative artworks from students and artists. It features a secured admin panel where the team can manage, upload, and organize the creative artworks/works. And it allows users to view and explore the entire portfolio.
 
 ## 📖 **Table of Contents**
 - **[Project Overview](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1?tab=readme-ov-file#-project-overview)**
 - **[Technology Stack](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-technology-stack)**
 - **[Team & Contributions](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-team--contributions)**
 - **[System Features](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-system-features)**
+- **[Database Structures](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-database-structures)**
+- **[How to run the program](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-how-to-run-the-program.)**
 
 ## 🔭 **Project Overview**
 
@@ -75,3 +77,44 @@
     - Manage artwork categories.
 -  **Profile Management**: Update artist bios and details.
 -  **Message Center**: View inquiries sent via the public contact form.
+
+## 🗄️ **Database Structure**
+#### Our project uses Google Cloud Firestore (NoSQL). Below is the schema design outlining the collections and their purposes.
+
+### 📂 **Collections(Tables)**
+1. **Portfolio (Artworks)**
+   - Purpose: This serves as the main gallery. It stores all metaadta relatedd to the uploaded artworks.
+   - Key Fields:**artist, category, client, description, imageUrl, storagePath, title, uploadedAt, views, year**
+2. **Team (The Minds)**
+   - Purpose: Stores the profile information of the Byte Studio members. This allows to dynamically generate the artist profile without hardcoding HTML.
+   - Key Fields: **bio, createdAt, imageUrl, link, name, role, skills, storagePath**
+3. **Messages (Inquiries)**
+   - Purpose: Captures data submitted via the public "Contact Us" form. These documents are read-only for the public but readable by Admins in the Dashboard.
+   - Key Fiels: **email, message, name, read, replied, timestamp**
+
+### **🔗 Key Relationships**
+#### **Team ↔ Portfolio (One-to-Many)**
+- **Logic**: The artist field in the Portfolio collection acts as a reference to the Team collection.
+- **Function**: This allows the system to query all artworks where artist == Name of the Artist to buildd specific profile showcases.
+
+## 🚀 How to Run the Program
+> [!NOTE]
+> **Active Internet Connection Required:** This project relies on Firebase (Cloud Firestore) for database connections and fetching images. The portfolio will not load content if you are offline.
+
+### **Option A: Developer Setup (Recommended)**
+1. **Download the [project files (ZIP)](https://github.com/whsxjswayh/byte-studios.github.io/tree/Jam006-patch-1)**
+2. **Open in Editor:**
+   - Launch Visual Studio Code.
+   - Open the folder where you extracted the project files.
+3. **Install Extensions:**
+   - For the best experience, install the following VS Code extensions:
+       - **Live Server (by Ritwick Dey)** - To run a local development server.
+       - **HTML CSS Support (Optional)** - For better syntax highlighting.
+4. **Launch:**
+    - Right-click index.html and select "Open with Live Server".
+
+### Option B: Quick View
+1. **Download the [project files (ZIP)](https://github.com/whsxjswayh/byte-studios.github.io/tree/Jam006-patch-1)**
+2. **Launch:**
+   - Navigate to the downloaded folder.
+   - Double-click index.html to open it directly in your default web browser.
