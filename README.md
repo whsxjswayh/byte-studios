@@ -70,8 +70,8 @@ The primary goal of Byte Studio is to bridge the gap between creative expression
 #### 🛡️ Admin / Backend Panel
 - **Secure Authentication**: Protected login system for team members only.
 - **Content Management (CRUD):**
-    Upload new artwork with metadata.
-    Edit existing details or delete outdated works.
-    Manage artwork categories.
+    - Upload new artwork with metadata.
+    - Edit existing details or delete outdated works.
+    - Manage artwork categories.
 -  **Profile Management**: Update artist bios and details.
 -  **Message Center**: View inquiries sent via the public contact form.
