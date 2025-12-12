@@ -6,8 +6,8 @@
 - **[Technology Stack](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-technology-stack)**
 - **[Team & Contributions](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-team--contributions)**
 - **[System Features](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-system-features)**
-- **[Database Structures](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-database-structures)**
-- **[How to run the program](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-how-to-run-the-program.)**
+- **[Database Structures](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#%EF%B8%8F-database-structure)**
+- **[How to run the program](https://github.com/whsxjswayh/byte-studios.github.io/blob/Jam006-patch-1/README.md#-how-to-run-the-program)**
 
 ## 🔭 **Project Overview**
 
